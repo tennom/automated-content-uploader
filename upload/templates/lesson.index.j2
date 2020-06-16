@@ -1,0 +1,40 @@
+<?php
+define('__MAINDIR__', __DIR__ . "/../../");
+require_once(__MAINDIR__ . 'components/lesson-cookie-header.php');
+require_once(__MAINDIR__ . 'html-top.php');
+require_once(__MAINDIR__ . '{{ module_name }}/lesson-title.php');
+require_once(__MAINDIR__ . 'components/lesson-header.php');
+require_once(__MAINDIR__ . 'components/menu.php');
+require_once(__MAINDIR__ . 'components/lesson/timelineFrame.php');
+
+?>
+<script>
+  var lesNum = {{ item }}; //lesson id number
+  var lesNameId = "{{ lesson_name }}" + lesNum; //no manual change!
+
+  window[lesNameId] = [{
+      tit: '',
+      type: 2,
+      overview: ['ཁྱེད་རང་གིས་སློབ་ཚན་མ་སྦྱངས་སྔོན་དུ་ནང་དོན་ལ་ཆ་རྒྱུས་ག་ཚོད་ཡོད་པ་ལྟ་བ།'],
+      qEnd: false,
+    },
+    {
+      tit: '',
+      type: 1,
+      overview: [],
+    },
+    {
+      tit: '',
+      type: 2,
+      overview: ['ཁྱེད་རང་གིས་སློབ་ཚན་སྦྱངས་ཚར་བའི་རྗེས་སུ་ག་ཚོད་ཤེས་ཡོད་པ་ལྟ་བ།'],
+      qEnd: true,
+    },
+  ];
+</script>
+<?php
+require_once(__MAINDIR__ . 'components/lesson/timelineBuilder.php');
+?>
+<script defer type="text/javascript" src="res/data.js"></script>
+<?php
+require_once(__MAINDIR__ . 'html-end.php');
+?>

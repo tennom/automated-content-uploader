@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  become: yes
+  roles:
+    - { role: upload, tags: ["uva"] }
+    # - { role: common, tags: ["common"] }
+    # - { role: mysql, tags: ["mysql"] }
+    # - { role: php-fpm, tags: ["php-fpm"] }
+    # - { role: certbot, tags: ["certbot"] }
+    # - { role: nginx, tags: ["nginx"] }
+
+
+    
+...

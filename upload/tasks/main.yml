@@ -1,0 +1,90 @@
+---
+- name: create a list lesson ids from videos in module.
+  set_fact:
+    lesson_ids: "{{ lesson_ids }} + [ '{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}' ]"
+  with_fileglob: '{{ module_source_dir }}/videos/web/*.mp4'
+  vars: 
+    lesson_ids: []
+
+- name: register stat of lesson0.
+  stat:
+    path: "{{ module_site_dir }}/lesson0"
+  register: lessons_dirs
+
+- name: create lesson dirs if they don't exist yet.
+  file:
+    path: "{{ module_site_dir }}/lesson{{ item }}"
+    state: directory
+    recurse: yes
+    owner: tbom
+    group: www-data
+    mode: '0751'
+  with_items: "{{ lesson_ids }}"
+  when: not lessons_dirs.stat.exists
+  # todo: idenpotency, create a list dir stats
+- name: create lesson res dir
+  file:
+    path: "{{ module_site_dir }}/lesson{{ item }}/res"
+    state: directory
+    recurse: yes
+    owner: tbom
+    group: www-data
+    mode: '0751'
+  with_items: "{{ lesson_ids }}"  
+  # todo: idenpotency, create a list dir stats
+- name: create video res dir
+  file:
+    path: "{{ module_site_dir }}/lesson{{ item }}/{{ lesson_name }}{{ item }}r1"
+    state: directory
+    recurse: yes
+    owner: tbom
+    group: www-data
+    mode: '0751'
+  with_items: "{{ lesson_ids }}"     
+
+- name: template lesson.index.j2 to lesson dirs
+  template:
+    src: lesson.index.j2
+    dest: "{{ module_site_dir }}/lesson{{ item }}/index.php"
+    owner: tbom
+    group: www-data
+    mode: '0751'
+  with_items: "{{ lesson_ids }}"  
+  
+- name: template data.js to lesson res dirs
+  template:
+    src: data.j2
+    dest: "{{ module_site_dir }}/lesson{{ item }}/res/data.js"
+    owner: tbom
+    group: www-data
+    mode: '0751'
+  with_items: "{{ lesson_ids }}"
+
+- name: copy videos to video dirs.
+  copy:
+    src: "{{ item }}"
+    # a local variable would easily replace the crazy filters.
+    dest: "{{ module_site_dir }}/lesson{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}/{{ lesson_name }}{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}r1/video.mp4"
+    owner: tbom
+    group: www-data
+    mode: '0751'
+  with_fileglob: '{{ module_source_dir }}/videos/web/*.mp4'
+
+- name: copy posters to video dirs.
+  copy:
+    src: "{{ item }}"
+    # a local variable would easily replace the crazy filters.
+    dest: "{{ module_site_dir }}/lesson{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}/{{ lesson_name }}{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}r1/poster.jpg"
+    owner: tbom
+    group: www-data
+    mode: '0751'
+  with_fileglob: '{{ module_source_dir }}/images/posters/*.jpg'
+
+- name: template res.js to video dirs
+  template:
+    src: res.j2
+    dest: "{{ module_site_dir }}/lesson{{ item }}/{{ lesson_name }}{{ item }}r1/res.js"
+    owner: tbom
+    group: www-data
+    mode: '0751'
+  with_items: "{{ lesson_ids }}"
