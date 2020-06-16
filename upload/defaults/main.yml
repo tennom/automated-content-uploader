@@ -1,8 +1,8 @@
 ---
-lesson_name: "pat"
-module_name: "photography2"
+lesson_name: "pza"
+module_name: "photography2-zh"
 # don't put the last slash for directories
-module_source_dir: "/media/tbom/KINGSTON/video-back/photography2/Screencasts_Tibetan"
+module_source_dir: "/media/tbom/KINGSTON/video-back/photography2/Screencasts_Chinese"
 # module_site_dir: "/home/tbom/Videos/uva-upload-test/{{ module_name }}"
 module_site_dir: "/home/tbom/www/tennom.net/{{ module_name }}"
 question_titles: 
@@ -17,11 +17,11 @@ question_titles:
 
 
 video_ends:
-    0: 548
-    1: 267
-    2: 359
-    3: 382
-    4: 296
-    5: 388
-    6: 307
-    7: 482
+    0: 531
+    1: 236
+    2: 256
+    3: 278
+    4: 249
+    5: 316
+    6: 249
+    7: 383
