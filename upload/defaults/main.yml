@@ -1,10 +1,10 @@
 ---
-lesson_name: "pcb"
-module_name: "photography-zh"
+lesson_name: "pt"
+module_name: "portraits"
 # don't put the last slash for directories
-module_source_dir: "/home/tbom/Downloads/uva trainings/photo-basic-zh"
-# module_site_dir: "/home/tbom/Videos/uva-upload-test/{{ module_name }}"
-module_site_dir: "/home/tbom/www/tennom.net/{{ module_name }}"
+module_source_dir: "/media/tbom/KINGSTON/video-back/portrait/Screencasts_Tibetan"
+module_site_dir: "/home/tbom/Videos/uva-upload-test/{{ module_name }}"
+# module_site_dir: "/home/tbom/www/tennom.net/{{ module_name }}"
 question_titles: 
     "0": "coming soon..."
     "1": "coming soon..."
