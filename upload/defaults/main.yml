@@ -1,8 +1,8 @@
 ---
-lesson_name: "pcb"
-module_name: "photography-zh"
+lesson_name: "pat"
+module_name: "photography2"
 # don't put the last slash for directories
-module_source_dir: "/home/tbom/Downloads/uva trainings/photo-basic-zh"
+module_source_dir: "/media/tbom/KINGSTON/video-back/photography2/Screencasts_Tibetan"
 # module_site_dir: "/home/tbom/Videos/uva-upload-test/{{ module_name }}"
 module_site_dir: "/home/tbom/www/tennom.net/{{ module_name }}"
 question_titles: 
@@ -14,27 +14,14 @@ question_titles:
     "5": "coming soon..."
     "6": "coming soon..."
     "7": "coming soon..."
-    "8": "coming soon..."
-    "9": "coming soon..."
-    "10": "coming soon..."
-    "11": "coming soon..."
-    "12": "coming soon..."
-    "13": "coming soon..."
-    "14": "coming soon..."
+
 
 video_ends:
-    9: 129
-    10: 88
-    11: 135
-    12: 141
-    13: 306
-    14: 235
-    0: 227
-    1: 440
-    2: 218
-    3: 258
-    4: 391
-    5: 507
-    6: 330
-    7: 485
-    8: 119
+    0: 548
+    1: 267
+    2: 359
+    3: 382
+    4: 296
+    5: 388
+    6: 307
+    7: 482
