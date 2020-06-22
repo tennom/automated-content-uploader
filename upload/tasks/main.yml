@@ -88,3 +88,12 @@
     group: www-data
     mode: '0751'
   with_items: "{{ lesson_ids }}"
+
+
+- name: template module.index.j2 to main module dir
+  template:
+    src: module.index.j2
+    dest: "{{ module_site_dir }}/index.php"
+    owner: tbom
+    group: www-data
+    mode: '0751'

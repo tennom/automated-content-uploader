@@ -1,6 +1,6 @@
 var qContent = {
   qType: "assess",
-  topic: "{{ question_titles[item] }}",
+  topic: "{{ lessons[item|int]['synopisis']|join('། ') }}",
 }
 
 var {{ lesson_name }}{{ item }}r0 = [
