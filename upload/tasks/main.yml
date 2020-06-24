@@ -2,8 +2,8 @@
 - name: create a list lesson ids from videos in module.
   set_fact:
     lesson_ids: "{{ lesson_ids }} + [ '{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}' ]"
-  with_fileglob: '{{ module_source_dir }}/videos/web/*.mp4'
-  vars: 
+  with_fileglob: "{{ module_source_dir }}/videos/web/*.mp4"
+  vars:
     lesson_ids: []
 
 - name: register stat of lesson0.
@@ -18,7 +18,7 @@
     recurse: yes
     owner: tbom
     group: www-data
-    mode: '0751'
+    mode: "0751"
   with_items: "{{ lesson_ids }}"
   when: not lessons_dirs.stat.exists
   # todo: idenpotency, create a list dir stats
@@ -29,9 +29,9 @@
     recurse: yes
     owner: tbom
     group: www-data
-    mode: '0751'
-  with_items: "{{ lesson_ids }}"  
-  # todo: idenpotency, create a list dir stats
+    mode: "0751"
+  with_items: "{{ lesson_ids }}"
+# todo: idenpotency, create a list dir stats
 - name: create video res dir
   file:
     path: "{{ module_site_dir }}/lesson{{ item }}/{{ lesson_name }}{{ item }}r1"
@@ -39,8 +39,8 @@
     recurse: yes
     owner: tbom
     group: www-data
-    mode: '0751'
-  with_items: "{{ lesson_ids }}"     
+    mode: "0751"
+  with_items: "{{ lesson_ids }}"
 
 - name: template lesson.index.j2 to lesson dirs
   template:
@@ -48,16 +48,16 @@
     dest: "{{ module_site_dir }}/lesson{{ item }}/index.php"
     owner: tbom
     group: www-data
-    mode: '0751'
-  with_items: "{{ lesson_ids }}"  
-  
+    mode: "0751"
+  with_items: "{{ lesson_ids }}"
+
 - name: template data.js to lesson res dirs
   template:
     src: data.j2
     dest: "{{ module_site_dir }}/lesson{{ item }}/res/data.js"
     owner: tbom
     group: www-data
-    mode: '0751'
+    mode: "0751"
   with_items: "{{ lesson_ids }}"
 
 - name: copy videos to video dirs.
@@ -67,8 +67,8 @@
     dest: "{{ module_site_dir }}/lesson{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}/{{ lesson_name }}{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}r1/video.mp4"
     owner: tbom
     group: www-data
-    mode: '0751'
-  with_fileglob: '{{ module_source_dir }}/videos/web/*.mp4'
+    mode: "0751"
+  with_fileglob: "{{ module_source_dir }}/videos/web/*.mp4"
 
 - name: copy posters to video dirs.
   copy:
@@ -77,8 +77,8 @@
     dest: "{{ module_site_dir }}/lesson{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}/{{ lesson_name }}{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}r1/poster.jpg"
     owner: tbom
     group: www-data
-    mode: '0751'
-  with_fileglob: '{{ module_source_dir }}/images/posters/*.jpg'
+    mode: "0751"
+  with_fileglob: "{{ module_source_dir }}/images/posters/*.jpg"
 
 - name: template res.js to video dirs
   template:
@@ -86,9 +86,8 @@
     dest: "{{ module_site_dir }}/lesson{{ item }}/{{ lesson_name }}{{ item }}r1/res.js"
     owner: tbom
     group: www-data
-    mode: '0751'
+    mode: "0751"
   with_items: "{{ lesson_ids }}"
-
 
 - name: template module.index.j2 to main module dir
   template:
@@ -96,4 +95,12 @@
     dest: "{{ module_site_dir }}/index.php"
     owner: tbom
     group: www-data
-    mode: '0751'
+    mode: "0751"
+
+- name: template module-title.j2 to main module dir as lesson-title.php
+  template:
+    src: module-title.j2
+    dest: "{{ module_site_dir }}/lesson-title.php"
+    owner: tbom
+    group: www-data
+    mode: "0751"

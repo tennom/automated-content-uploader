@@ -14,17 +14,17 @@ require_once('../components/menu.php');
 
   // lesIndex is useful when some lessons are missing
   window[lesName] = [
-  {% for item in lessons %}  
-  {
-    lesIndex: {{ item }},
-    tit: '{{ lessons[item]["title"] }}',
-    synopsis: [
-      {% for sub_item in lessons[item]['synopisis'] %}
-      "{{ sub_item }}།",
-      {% endfor %}
-    ],
-  },
-  {% endfor %}
+{% for item in lessons %}  
+    {
+      lesIndex: {{ item }},
+      tit: '{{ lessons[item]["title"] }}',
+      synopsis: [
+{% for sub_item in lessons[item]['synopisis'] %}
+        "{{ sub_item }}།",
+{% endfor %}
+      ],
+    },
+{% endfor %}
   ];
   //creation for lesson modules
   var lessonContainer = document.getElementById('{{ module_name_short }}-container');
