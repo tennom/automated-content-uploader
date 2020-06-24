@@ -1,29 +1,82 @@
 ---
 lesson_name: "pcb"
 module_name: "photography-zh"
+module_title: "པར་ལེན།"
+module_name_short: "photo-zh"
 # don't put the last slash for directories
-module_source_dir: "/home/tbom/Downloads/uva trainings/photo-basic-zh"
+module_source_dir: "/media/tbom/Mobile Drive/uva trainings/photo-basic-zh"
 # module_site_dir: "/home/tbom/Videos/uva-upload-test/{{ module_name }}"
 module_site_dir: "/home/tbom/www/tennom.net/{{ module_name }}"
-question_titles: 
-    "0": "coming soon..."
-    "1": "coming soon..."
-    "2": "coming soon..."
-    "3": "coming soon..."
-    "4": "coming soon..."
-    "5": "coming soon..."
-    "6": "coming soon..."
-    "7": "coming soon..."
-    "8": "coming soon..."
-    "9": "coming soon..."
-    "10": "coming soon..."
-    "11": "coming soon..."
-    "12": "coming soon..."
-    "13": "coming soon..."
-    "14": "coming soon..."
+# if all the lessons share the same resource patterns, we can use resource_model
+resource_model:
+    - type: 1
+    - type: 2
+      title: "视屏内容问答。"
+
+lessons:
+    0:
+        title: "一、介绍"
+        synopisis: ["相机", "图像的形成"]
+        media: "{{ resource_model }}"
+    1:
+        title: "二、单反相机的功能和历史介绍"
+        synopisis: ["相机历史", "相机功能"]
+        media: "{{ resource_model }}"
+    2:
+        title: "三、什么是光圈"
+        synopisis: ["光圈"]
+        media: "{{ resource_model }}"
+    3:
+        title: "四、什么是光圈值"
+        synopisis: ["怎样调解光圈值"]
+        media: "{{ resource_model }}"
+    4:
+        title: "五、什么是快门速度"
+        synopisis: ["快门", "快门速度的用途"]
+        media: "{{ resource_model }}"
+    5:
+        title: "六、掌握曝光的程度"
+        synopisis: ["调解曝光程度"]
+        media: "{{ resource_model }}"
+    6:
+        title: "七、感光"
+        synopisis: ["感光的用途。"]
+        media: "{{ resource_model }}"
+    7:
+        title: "八、除自动模式以外"
+        synopisis: ["自动模式以外的设置"]
+        media: "{{ resource_model }}"
+    8:
+        title: "九、设置光圈优先模式"
+        synopisis: ["光圈优先模式"]
+        media: "{{ resource_model }}"
+    9:
+        title: "十、如何设置快门优先模式"
+        synopisis: ["快门优先模式"]
+        media: "{{ resource_model }}"
+    10:
+        title: "十一、如何删除照片"
+        synopisis: ["从相机删除照片"]
+        media: "{{ resource_model }}"
+    11:
+        title: "十二、如何更换相机的镜头"
+        synopisis: ["镜头类别", "镜头更换"]
+        media: "{{ resource_model }}"
+    12:
+        title: "十三、如何设置手动对焦模式"
+        synopisis: ["手动对焦模式", "手动对焦模式的用途"]
+        media: "{{ resource_model }}"
+    13:
+        title: "十四、闪光灯"
+        synopisis: ["闪光灯", "闪光灯用途"]
+        media: "{{ resource_model }}"
+    14:
+        title: "十五、图片画质"
+        synopisis: ["图片画质"]
+        media: "{{ resource_model }}"
 
 video_ends:
-    9: 129
+    9: 130
     10: 88
     11: 135
     12: 141
@@ -33,8 +86,252 @@ video_ends:
     1: 440
     2: 218
     3: 258
-    4: 391
+    4: 392
     5: 507
     6: 330
     7: 485
     8: 119
+
+interactives:
+    0:
+        r2:
+            - type: "singleA"
+              q: "我"
+              a:
+                  - 非常喜欢学摄像。
+                  - 非常害怕学摄像。
+                  - 对摄影已经习以为常了，我以这个为乐。
+                  - "有其它原因。"
+              correct_a: "any"
+    1:
+        r2:
+            - type: "singleA"
+              q: "哪里创造出了世上第一张映像？"
+              a:
+                  - "公元 5世纪的中国"
+                  - "公元 16世纪的欧洲"
+                  - "1820年在法国"
+              correct_a: "a"
+
+            - type: "tf"
+              q: "相机暗箱是用于拍摄照片的一种手持设备。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+
+            - type: "tf"
+              q: "单反相机或数码静态相机的定义功能一个可移动的镜子，该镜子可向上翻转以使传感器暴露在光线下。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "a"
+    2:
+        r2:
+            - type: "singleA"
+              q: "光圈是"
+              a:
+                  - "衡量镜头打开或关闭的程度"
+                  - "衡量图像的亮度"
+                  - "测量相机传感器暴光的秒数（或几分之一秒）的量度"
+              correct_a: "a"
+
+            - type: "tf"
+              q: "“广角光圈”将创建部分内容被合焦的一张图像。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "a"
+
+            - type: "tf"
+              q: "如果图像曝光不足，则图像会太亮。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+    3:
+        r2:
+            - type: "singleA"
+              q: "关于光圈值描述正确的是："
+              a:
+                  - "光圈系数越小光圈就越小。"
+                  - "光圈与光圈系数毫无关联。"
+                  - "光圈值（f / 1.5-5）射入的光比大的光圈值（f / 22）多。"
+                  - "较大的光圈值对应较大的光圈。"
+              correct_a: "c"
+            - type: "singleA"
+              q: "如果要拍摄景深较小（背景或前景模糊）的肖像，选择"
+              a:
+                  - "广角光圈（光圈值低于8）"
+                  - "窄光圈（光圈值大于8）"
+              correct_a: "a"
+
+    4:
+        r2:
+            - type: "singleA"
+              q: "快门速度是"
+              a:
+                  - "衡量镜头打开或关闭的程度。"
+                  - "测量图像的亮度。"
+                  - "衡量相机传感器曝光秒数（或几分之一秒）的量度。"
+              correct_a: "c"
+            - type: "tf"
+              q: "快门速度不会影响照片中移动姿态的出现方式。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+            - type: "tf"
+              q: "¼s是快快门速度。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+    5:
+        r2:
+            - type: "singleA"
+              q: "图片的曝光受以下因素影响："
+              a:
+                  - 光圈
+                  - 快门速度
+                  - 感光度
+                  - 上述所有
+              correct_a: "d"
+            - type: "singleA"
+              q: "天气晴朗，您正在拍摄大光圈的人像。 为了平衡曝光，您应该选择："
+              a:
+                  - "慢快门速度"
+                  - "快速快门速度"
+              correct_a: "b"
+            - type: "singleA"
+              q: "如果您的图像曝光过度："
+              a:
+                  - "太亮了。"
+                  - "您可以通过选择更窄的光圈（较大的光圈值）来平衡曝光。"
+                  - "您可以通过选择更快的快门速度调整曝光程度"
+                  - "上述所有"
+              correct_a: "d"
+    6:
+        r2:
+            - type: "tf"
+              q: "手动调整感光度会改变进入相机的光量."
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+
+            - type: "tf"
+              q: "通常您应始终尝试将感光度调低。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "a"
+
+            - type: "singleA"
+              q: "在以下情景下您应该将感光度调高："
+              a:
+                  - "拍摄移动目标。"
+                  - "在弱光下。"
+                  - "在明亮的光线下"
+              correct_a: "b"
+    7:
+        r2:
+            - type: "tf"
+              q: "快门优先模式是您试图控制移动时的最佳模式。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "a"
+            - type: "tf"
+              q: "当您试图控制景深时，光圈优先模式是最佳模式。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "a"
+            - type: "tf"
+              q: "景深是衡量图像合焦的程度。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "a"
+    8:
+        r2:
+            - type: "tf"
+              q: "更改为AP模式可让您调整相机传感器曝光的时间"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+    9:
+        r2:
+            - type: "singleA"
+              q: "快门优先模式非常适合以下场景："
+              a:
+                  - "人像"
+                  - "拍摄静止不动的物体"
+                  - "控制移动"
+              correct_a: "c"
+    10:
+        r2:
+            - type: "tf"
+              q: "查看图像的标准符号是矩形内的横向三角形"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "a"
+    11:
+        r2:
+            - type: "tf"
+              q: "如果您拥有一台尼康相机，则可以使用佳能镜头。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+    12:
+        r2:
+            - type: "tf"
+              q: "手动对焦模式可让您控制快门速度或光圈。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+    13:
+        r2:
+            - type: "tf"
+              q: "白天不应使用闪光。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+
+            - type: "singleA"
+              q: "不属于避免使用闪光的方法是"
+              a:
+                  - "使用更大的光圈"
+                  - "调整拍摄对象的位置，使光线从它们后面射出"
+                  - "将拍摄对象移至具有更好自然光源的位置"
+              correct_a: "b"
+            - type: "singleA"
+              q: "闪光灯的标准符号是"
+              a:
+                  - 闪电
+                  - 正方形
+                  - 灯泡
+                  - 以上都不是
+              correct_a: "a"
+    14:
+        r2:
+            - type: "singleA"
+              q: "如果要在照片上获得最高分辨率，则应将图片保存为："
+              a:
+                  - "RAW"
+                  - "JPEG"
+              correct_a: "a"
+            - type: "singleA"
+              q: "当您的图像总是像素化的时候， 您应该检查一下"
+              a:
+                  - 文档设定
+                  - 感光度设定
+                  - 对焦模式
+                  - 上述所有
+              correct_a: "d"
