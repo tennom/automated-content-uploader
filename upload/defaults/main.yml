@@ -1,20 +1,51 @@
 ---
 lesson_name: "pza"
 module_name: "photography2-zh"
+module_title: "པར་ལེན།"
+module_name_short: "photoA-zh"
 # don't put the last slash for directories
-module_source_dir: "/media/tbom/KINGSTON/video-back/photography2/Screencasts_Chinese"
+module_source_dir: "/media/tbom/Mobile Drive/uva trainings/photography2-zh"
 # module_site_dir: "/home/tbom/Videos/uva-upload-test/{{ module_name }}"
 module_site_dir: "/home/tbom/www/tennom.net/{{ module_name }}"
-question_titles: 
-    "0": "coming soon..."
-    "1": "coming soon..."
-    "2": "coming soon..."
-    "3": "coming soon..."
-    "4": "coming soon..."
-    "5": "coming soon..."
-    "6": "coming soon..."
-    "7": "coming soon..."
+# if all the lessons share the same resource patterns, we can use resource_model
+resource_model:
+    - type: 1
+    - type: 2
+      title: "视屏内容问答。"
 
+lessons:
+    0:
+        title: "1. 黄金时段及其它"
+        synopisis: ["一天中不同时段和光线。"]
+        media: "{{ resource_model }}"
+    1:
+        title: "2. 柔光和强光的对比"
+        synopisis: ["强光", "柔光"]
+        media: "{{ resource_model }}"
+    2:
+        title: "3. 色调"
+        synopisis: ["色调与照片的显现效果"]
+        media: "{{ resource_model }}"
+    3:
+        title: "4. 对比"
+        synopisis: ["单调", "对比度颜色"]
+        media: "{{ resource_model }}"
+    4:
+        title: "5. 三分法则"
+        synopisis: ["目标对象的位置", "三分法则"]
+        media: "{{ resource_model }}"
+    5:
+        title: "6. 捕捉深度"
+        synopisis: ["图片中物体的大小及实际距离", "消失点"]
+        media: "{{ resource_model }}"
+    6:
+        title: "7. 移动模糊"
+        synopisis: ["移动模糊化", "三脚架的用途"]
+        media: "{{ resource_model }}"
+    7:
+        title: "8. 决定性的时刻"
+        synopisis: ["捕捉决定性时刻的因素。"]
+        media: "{{ resource_model }}"
 
 video_ends:
     0: 531
@@ -25,3 +56,129 @@ video_ends:
     5: 316
     6: 249
     7: 383
+
+interactives:
+    0:
+        r2:
+            - type: "tf"
+              q: "每天只有一个黄金时段那是日出后的一小时。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+            - type: "singleA"
+              q: "一天当中尝试慢速快门和光的最佳时段为："
+              a:
+                  - "黄金时刻"
+                  - "粉红时光"
+                  - "蓝色时光"
+              correct_a: "c"
+    1:
+        r2:
+            - type: "singleA"
+              q: "强光的一个例子是"
+              a:
+                  - "阴天的阳光"
+                  - "带有阴影的灯"
+                  - "手电筒"
+              correct_a: "c"
+
+            - type: "singleA"
+              q: "柔光的一个示例是"
+              a:
+                  - "阴天的阳光"
+                  - "带有阴影的灯"
+                  - "手电筒"
+              correct_a: "a"
+
+            - type: "tf"
+              q: "对于人像而言，柔光通常比强光更好。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "a"
+    2:
+        r2:
+            - type: "tf"
+              q: "通过在一天当中的不同时间拍摄，您可以改变照片的显现效果。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "a"
+    3:
+        r2:
+            - type: "tf"
+              q: "单调意味着图像没有主色"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+            - type: "singleA"
+              q: "不属于高对比度颜色组合的是："
+              a:
+                  - "蓝色和红色"
+                  - "紫色和黄色"
+                  - "绿色和蓝色"
+                  - "黑色和白色"
+              correct_a: "c"
+
+    4:
+        r2:
+            - type: "tf"
+              q: "三分法则建议您将被摄对象放置在图像中心。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+            - type: "tf"
+              q: "当您使用三分法则时，您的照片当中应该只有一个主体。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+    5:
+        r2:
+            - type: "tf"
+              q: "在相机里面，离相机近的物体将明显大于离相机远的物体。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "a"
+            - type: "tf"
+              q: "消失点始终位于图像的中间。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+    6:
+        r2:
+            - type: "tf"
+              q: "为了使照片中的移动模糊化，您应该始终使用三脚架。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
+            - type: "tf"
+              q: "如果您要在保持定格不变的背景下使运动对象模糊化，则应该使用三脚架或应该将相机尽可能地保持静止不动"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "a"
+    7:
+        r2:
+            - type: "singleA"
+              q: "捕捉决定性时刻的步骤包括"
+              a:
+                  - "拍摄大量图像"
+                  - "做你的研究"
+                  - "要有耐心"
+                  - "幸运"
+                  - "以上所有"
+                  - "以上都不对"
+              correct_a: "e"
+            - type: "tf"
+              q: "您将始终拥有一张比其他图像更好的图像，这被称作为决定性时刻。"
+              a:
+                  - "对"
+                  - "错"
+              correct_a: "b"
