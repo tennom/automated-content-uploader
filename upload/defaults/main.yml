@@ -1,16 +1,39 @@
 ---
 lesson_name: "pc"
 module_name: "portraits-zh"
+module_title: "མི་སྣའི་པར།"
+module_name_short: "portraits-zh"
 # don't put the last slash for directories
-module_source_dir: "/media/tbom/KINGSTON/video-back/portrait/Screencasts_Chinese"
+module_source_dir: "/media/tbom/Mobile Drive/uva trainings/portrait-zh"
 # module_site_dir: "/home/tbom/Videos/uva-upload-test/{{ module_name }}"
 module_site_dir: "/home/tbom/www/tennom.net/{{ module_name }}"
-question_titles: 
-    "0": "coming soon..."
-    "1": "coming soon..."
-    "2": "coming soon..."
-    "3": "coming soon..."
-    "4": "coming soon..."
+# if all the lessons share the same resource patterns, we can use resource_model
+resource_model:
+    - type: 1
+    - type: 2
+      title: "视屏内容问答。"
+
+lessons:
+    0:
+        title: "1. 人像构图"
+        synopisis: ["人像", "特写镜头"]
+        media: "{{ resource_model }}"
+    1:
+        title: "2. 人像拍摄模式"
+        synopisis: ["单人照", "合照"]
+        media: "{{ resource_model }}"
+    2:
+        title: "3. 户外人像照明"
+        synopisis: ["户外照明因素"]
+        media: "{{ resource_model }}"
+    3:
+        title: "4. 简单的头像摄影"
+        synopisis: ["对象和背景", "光线和位置"]
+        media: "{{ resource_model }}"
+    4:
+        title: "5. 头像摄影的误区"
+        synopisis: ["头像摄影的误区"]
+        media: "{{ resource_model }}"
 
 video_ends:
     0: 351
@@ -18,3 +41,92 @@ video_ends:
     2: 338
     3: 348
     4: 287
+
+interactives:
+    0:
+        r2:
+            - type: "singleA"
+              q: "以下哪个不建议用作肖像构图？"
+              a:
+                  - "动作镜头"
+                  - "跳跃"
+                  - "特写"
+                  - "大 笑"
+              correct_a: "b"
+            - type: "tf"
+              q: "特写镜头不应该包括拍摄对象的双腿。"
+              a:
+                  - "正确"
+                  - "错误"
+              correct_a: "a"
+    1:
+        r2:
+            - type: "tf"
+              q: "拍摄人像的最佳模式始终是光圈优先或手动模式。"
+              a:
+                  - "正确"
+                  - "错误"
+              correct_a: "b"
+
+            - type: "singleA"
+              q: "不能使用光圈优先模式的是"
+              a:
+                  - "夜间拍照"
+                  - "进行详细的近距离拍摄"
+                  - "创建模糊背景"
+                  - "拍照单人个体照片时"
+              correct_a: "a"
+
+    2:
+        r2:
+            - type: "singleA"
+              q: "影响户外照明外观的最重要因素，除了"
+              a:
+                  - "拍照对象的位置"
+                  - "您使用的相机类型"
+                  - "天气"
+                  - "一天中的时间"
+              correct_a: "b"
+            - type: "tf"
+              q: "千万不要在阴天拍摄人像。"
+              a:
+                  - "正确"
+                  - "错误"
+              correct_a: "b"
+            - type: "singleA"
+              q: "在阳光底下拍摄人像时您应该："
+              a:
+                  - "背对太阳光"
+                  - "正对太阳"
+              correct_a: "a"
+    3:
+        r2:
+            - type: "tf"
+              q: "您应该将拍摄对象放置在一个与它形成鲜明对比的背景上"
+              a:
+                  - "正确"
+                  - "错误"
+              correct_a: "a"
+            - type: "tf"
+              q: "您应该始终将拍摄对象摆放在正确的位置，以使他们的身体直接面对相机。"
+              a:
+                  - "正确"
+                  - "错误"
+              correct_a: "b"
+
+    4:
+        r2:
+            - type: "singleA"
+              q: "头像摄象时应考虑以下所有因素，除了："
+              a:
+                  - "寻找能够突出拍摄对象的背景"
+                  - "避免强光照射"
+                  - "让您拍摄对象的身体稍微向两侧扭转"
+                  - "使用狭窄的光圈"
+              correct_a: "d"
+            - type: "tf"
+              q: "拍摄大头照时，您应该尝试将拍摄对象置于阴影下。"
+              a:
+                  - "正确"
+                  - "错误"
+              correct_a: "a"
