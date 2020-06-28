@@ -1,0 +1,63 @@
+<?php
+// require_once("../lessons/http-header.php");
+require_once('../html-top.php');
+require_once("lesson-title.php");
+require_once('../components/menu.php');
+
+?>
+<!--lesson page, entirely built by js  -->
+<div id="{{ module_name_short }}-container" class="main-body">
+</div>
+
+<script>
+  var lesName = "{{ module_name_short }}";
+
+  // lesIndex is useful when some lessons are missing
+  window[lesName] = [
+{% for item in lessons %}  
+    {
+      lesIndex: {{ item }},
+      tit: '{{ lessons[item]["title"] }}',
+      synopsis: [
+{% for sub_item in lessons[item]['synopisis'] %}
+        "{{ sub_item }}།",
+{% endfor %}
+      ],
+    },
+{% endfor %}
+  ];
+  //creation for lesson modules
+  var lessonContainer = document.getElementById('{{ module_name_short }}-container');
+  var lessonBox = document.createElement('div');
+  lessonBox.classList.add("lesson-box"); //flex container
+
+  const packs = [];
+
+  window[lesName].forEach((thisLesson, lesIndex) => { //flex items, lessons
+    var subPacks = [];
+    thisLesson.synopsis.forEach((thisSub, subIndex) => { //sub topics to be packed in lessons
+      var resId = subIndex + 1; //cuz 0 is used for the main video
+      subPacks.push(
+        `<li id="${lesName}${thisLesson.lesIndex}i${resId}">
+        <img class="desc-item-icon" alt="sub topic ${resId}" src="/imgs/video-tutorial.svg" align="middle">${thisSub}</li>`);
+
+    });
+    // make entire flex item clickable
+    packs.push(
+      `<a id="${lesName}${thisLesson.lesIndex}" href="lesson${thisLesson.lesIndex}/" class="flex-item w3-card">
+          <div class="myTit bo-font bo-big">${thisLesson.tit}</div>
+          <div class="thumb-back">
+              <div id="${lesName}${thisLesson.lesIndex}thumb" class="flex-thumb">
+              </div>
+          </div
+          ><div class="flex-desc bo-font"><ul>${subPacks.join("")}</ul></div>
+      </a>`
+    );
+  });
+  lessonBox.innerHTML = packs.join("");
+  // document.body.appendChild(lessonBox);
+  lessonContainer.appendChild(lessonBox);
+</script>
+<?php
+require_once('../html-end.php');
+?>
