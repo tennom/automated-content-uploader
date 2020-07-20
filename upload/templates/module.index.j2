@@ -43,8 +43,9 @@ require_once('../components/menu.php');
 
     });
     // make entire flex item clickable
+    var lessonDirIndex = thisLesson.lesIndex+1
     packs.push(
-      `<a id="${lesName}${thisLesson.lesIndex}" href="lesson${thisLesson.lesIndex}/" class="flex-item w3-card">
+      `<a id="${lesName}${thisLesson.lesIndex}" href="lesson${lessonDirIndex}/" class="flex-item w3-card">
           <div class="myTit bo-font bo-big">${thisLesson.tit}</div>
           <div class="thumb-back">
               <div id="${lesName}${thisLesson.lesIndex}thumb" class="flex-thumb">
