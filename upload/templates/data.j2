@@ -1,6 +1,6 @@
 var qContent = {
   qType: "assess",
-  topic: "{{ lessons[item|int]['synopisis']|join('། ') }}",
+  topic: "{{ lessons[item|int-1]['synopisis']|join('། ') }}",
 }
 
 var {{ lesson_name }}{{ item }}r0 = [
@@ -8,17 +8,17 @@ var {{ lesson_name }}{{ item }}r0 = [
 ];
 
 {# item is passed in as string and need to be int. #}
-{% set item = item|int %}
+{% set item = item|int -1 %}
 {# with other medium, post qa id is 1. #}
 {% set post_qa_resource_id = 1 %}
 {% if interactives[item] is defined %}
 {% set post_qa_resource_id = lessons[item].media|length + post_qa_resource_id %}
-var {{ lesson_name }}{{ item }}r{{ post_qa_resource_id }} = [
+var {{ lesson_name }}{{ item+1 }}r{{ post_qa_resource_id }} = [
   qContent,
 ];
 
 {% for resource in interactives[item] %}
-var {{ lesson_name }}{{ item }}{{ resource }} = [
+var {{ lesson_name }}{{ item+1 }}{{ resource }} = [
 {% set resource_obj = interactives[item][resource] %}
 {% for qa in resource_obj %}
   { 
