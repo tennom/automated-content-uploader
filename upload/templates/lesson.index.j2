@@ -18,7 +18,7 @@ require_once(__MAINDIR__ . 'components/lesson/timelineFrame.php');
       overview: ['ཁྱེད་རང་གིས་སློབ་ཚན་མ་སྦྱངས་སྔོན་དུ་ནང་དོན་ལ་ཆ་རྒྱུས་ག་ཚོད་ཡོད་པ་ལྟ་བ།'],
       qEnd: false,
     },
-{% for medium in lessons[item|int].media %}
+{% for medium in lessons[item|int-1].media %}
     {
 {% if medium.title is defined %}
 {% set medium_tit = medium.title %}
