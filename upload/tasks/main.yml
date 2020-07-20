@@ -1,7 +1,7 @@
 ---
 - name: create a list lesson ids from videos in module.
   set_fact:
-    lesson_ids: "{{ lesson_ids }} + [ '{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}' ]"
+    lesson_ids: "{{ lesson_ids }} + [ '{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int }}' ]"
   with_fileglob: "{{ module_source_dir }}/videos/web/*.mp4"
   vars:
     lesson_ids: []
@@ -64,7 +64,7 @@
   copy:
     src: "{{ item }}"
     # a local variable would easily replace the crazy filters.
-    dest: "{{ module_site_dir }}/lesson{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}/{{ lesson_name }}{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}r1/video.mp4"
+    dest: "{{ module_site_dir }}/lesson{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') }}/{{ lesson_name }}{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') }}r1/video.mp4"
     owner: tbom
     group: www-data
     mode: "0751"
@@ -74,7 +74,7 @@
   copy:
     src: "{{ item }}"
     # a local variable would easily replace the crazy filters.
-    dest: "{{ module_site_dir }}/lesson{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}/{{ lesson_name }}{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') | int - 1 }}r1/poster.jpg"
+    dest: "{{ module_site_dir }}/lesson{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') }}/{{ lesson_name }}{{ item | basename | regex_replace('^([0-9]+).+$', '\\1') }}r1/poster.jpg"
     owner: tbom
     group: www-data
     mode: "0751"
