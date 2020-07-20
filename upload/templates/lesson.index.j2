@@ -18,7 +18,7 @@ require_once(__MAINDIR__ . 'components/lesson/timelineFrame.php');
       overview: ['观看之前您对其内容的理解程度。'],
       qEnd: false,
     },
-{% for medium in lessons[item|int].media %}
+{% for medium in lessons[item|int-1].media %}
     {
 {% if medium.title is defined %}
 {% set medium_tit = medium.title %}
