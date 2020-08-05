@@ -20,15 +20,15 @@ lessons:
         media: "{{ resource_model }}"
     1:
         title: "2. 柔光和强光的对比"
-        synopisis: ["强光", "柔光"]
+        synopisis: ["强光", "柔光", "光源的大小和位置"]
         media: "{{ resource_model }}"
     2:
         title: "3. 色调"
-        synopisis: ["色调与照片的显现效果"]
+        synopisis: ["色调与照片的显现效果", "色调创造照片中的情感"]
         media: "{{ resource_model }}"
     3:
         title: "4. 对比"
-        synopisis: ["单调", "对比度颜色"]
+        synopisis: ["单调", "对比度颜色", "对比颜色如何影响图像质量"]
         media: "{{ resource_model }}"
     4:
         title: "5. 三分法则"
@@ -40,11 +40,12 @@ lessons:
         media: "{{ resource_model }}"
     6:
         title: "7. 移动模糊"
-        synopisis: ["移动模糊化", "三脚架的用途"]
+        synopisis:
+            ["移动模糊化", "低速快门模糊和定格移动的对象", "三脚架的用途"]
         media: "{{ resource_model }}"
     7:
         title: "8. 决定性的时刻"
-        synopisis: ["捕捉决定性时刻的因素。"]
+        synopisis: ["捕捉决定性时刻的因素", "如何提高体现特定情感"]
         media: "{{ resource_model }}"
 
 video_ends:
