@@ -24,7 +24,12 @@ lessons:
         media: "{{ resource_model }}"
     2:
         title: "三、什么是光圈"
-        synopisis: ["光圈"]
+        synopisis:
+            [
+                "光圈影响照片中深度",
+                "光圈影响照片中深度",
+                "镜头的功能以及光圈和光之间的基本关系",
+            ]
         media: "{{ resource_model }}"
     3:
         title: "四、什么是光圈值"
@@ -36,15 +41,15 @@ lessons:
         media: "{{ resource_model }}"
     5:
         title: "六、掌握曝光的程度"
-        synopisis: ["调解曝光程度"]
+        synopisis: ["调解曝光程度", "如何组合光圈和快门速度"]
         media: "{{ resource_model }}"
     6:
         title: "七、感光"
-        synopisis: ["感光的用途。"]
+        synopisis: ["感光的用途", "使用ISO及其对图像质量"]
         media: "{{ resource_model }}"
     7:
         title: "八、除自动模式以外"
-        synopisis: ["自动模式以外的设置"]
+        synopisis: ["自动模式以外的设置", "最适合的拍摄类型"]
         media: "{{ resource_model }}"
     8:
         title: "九、设置光圈优先模式"
@@ -60,7 +65,7 @@ lessons:
         media: "{{ resource_model }}"
     11:
         title: "十二、如何更换相机的镜头"
-        synopisis: ["镜头类别", "镜头更换"]
+        synopisis: ["镜头类别", "镜头更换", "如何拆卸和安装镜头"]
         media: "{{ resource_model }}"
     12:
         title: "十三、如何设置手动对焦模式"
@@ -72,7 +77,7 @@ lessons:
         media: "{{ resource_model }}"
     14:
         title: "十五、图片画质"
-        synopisis: ["图片画质"]
+        synopisis: ["图像保存在RAW中", "图片画质"]
         media: "{{ resource_model }}"
 
 video_ends:
