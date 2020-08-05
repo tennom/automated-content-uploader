@@ -16,15 +16,15 @@ resource_model:
 lessons:
     0:
         title: "1. 人像构图"
-        synopisis: ["人像", "特写镜头"]
+        synopisis: ["人像", "特写镜头", "四个简单的肖像构图构想"]
         media: "{{ resource_model }}"
     1:
         title: "2. 人像拍摄模式"
-        synopisis: ["单人照", "合照"]
+        synopisis: ["单人照", "合照", "集体照与个人肖像的不同设置"]
         media: "{{ resource_model }}"
     2:
         title: "3. 户外人像照明"
-        synopisis: ["户外照明因素"]
+        synopisis: ["户外照明因素", "如何定位拍摄对象"]
         media: "{{ resource_model }}"
     3:
         title: "4. 简单的头像摄影"
@@ -32,7 +32,7 @@ lessons:
         media: "{{ resource_model }}"
     4:
         title: "5. 头像摄影的误区"
-        synopisis: ["头像摄影的误区"]
+        synopisis: ["头像摄影的误区", "三种简单的方法来改善人像"]
         media: "{{ resource_model }}"
 
 video_ends:
