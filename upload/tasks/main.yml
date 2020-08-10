@@ -6,9 +6,9 @@
   vars:
     lesson_ids: []
 
-- name: register stat of lesson0.
+- name: register stat of lesson1.
   stat:
-    path: "{{ module_site_dir }}/lesson0"
+    path: "{{ module_site_dir }}/lesson1"
   register: lessons_dirs
 
 - name: create lesson dirs if they don't exist yet.

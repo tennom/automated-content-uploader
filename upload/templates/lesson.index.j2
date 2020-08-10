@@ -9,6 +9,7 @@ require_once(__MAINDIR__ . 'components/lesson/timelineFrame.php');
 
 ?>
 <script>
+  document.title = "{{ lessons[item|int - 1].title }} {{ module_title }}";
   var lesNum = {{ item }}; //lesson id number
   var lesNameId = "{{ lesson_name }}" + lesNum; //no manual change!
 
